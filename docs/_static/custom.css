@@ -76,10 +76,12 @@ div.body li::marker {
 
 .toctree-l2 {
     padding-top: 6px;
+    padding-bottom: 0px;
 }
 
 .toctree-l3 {
     padding-top: 3px;
+    padding-bottom: 0px;
 }
 
 div.sphinxsidebar #searchbox {

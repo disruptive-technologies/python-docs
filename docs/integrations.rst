@@ -8,3 +8,5 @@
    :maxdepth: 1
 
    integrations/quickstart
+   integrations/examples
+   integrations/modules
