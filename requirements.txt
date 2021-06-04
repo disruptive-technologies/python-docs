@@ -1,0 +1,4 @@
+disruptive
+dtintegrations
+sphinx==3.5.3
+sphinx-autodoc-typehints==1.11.1
