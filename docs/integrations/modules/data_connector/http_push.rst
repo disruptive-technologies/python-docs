@@ -2,9 +2,15 @@
 
 http_push
 =========
+This submodule contains methods related to the HTTP Push type Data Connector.
 
-.. _http_push_validate:
+- :ref:`decode_request() <http_push_decode_request>`
+- :ref:`decode() <http_push_decode>`
+
+Methods
+-------
+.. _http_push_decode_request:
 .. autofunction:: dtintegrations.data_connector.http_push.decode_request
 
-.. _http_push_validate_generic:
+.. _http_push_decode:
 .. autofunction:: dtintegrations.data_connector.http_push.decode

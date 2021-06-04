@@ -13,7 +13,7 @@ Get Started!
 Our Python API currently consists of 2 separate packages.
 
 - :ref:`disruptive <client_quickstart>`: A Python wrapper for our REST API.
-- :ref:`dtintegrations <integrations_quickstart>`: Methods for simpler Data Connector integrations.
+- :ref:`dtintegrations <integrations_quickstart>`: Validates and decodes Data Connector events.
 
 Head over to either of their quickstart-pages to get going with only a few lines of code.
 

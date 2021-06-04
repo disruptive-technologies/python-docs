@@ -2,6 +2,7 @@
 
 provider
 ========
+This submodule contains information related to the various supported providers.
 
 String Constants
 ----------------

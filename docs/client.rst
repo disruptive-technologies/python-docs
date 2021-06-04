@@ -2,7 +2,7 @@
 
 **disruptive**
 ==============
-This is a Python wrapper for our `REST API <https://developer.disruptive-technologies.com/api>`_. It takes conveniently care of cumbersome tasks like pagination and keep-alives while keeping all existing functionality.
+A Python wrapper for our `REST API <https://developer.disruptive-technologies.com/api>`_. It keeps all the functionality but conveniently takes care of cumbersome tasks like pagination and keep-alives, letting you focus on device interaction.
 
 Get Started!
 ------------
