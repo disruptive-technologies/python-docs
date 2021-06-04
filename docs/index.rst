@@ -6,34 +6,26 @@
 
 Welcome!
 ========
-This is the Disruptive Technologies Python 3 API. It is an extension of our `REST API <https://developer.disruptive-technologies.com/api>`_ with added quality-of-life features, making interacting with our services even easier.
+This is the Disruptive Technologies Python 3 API. It is an extension of our various tools described in the `Developer Documentation <https://developer.disruptive-technologies.com/docs/>`_, with some added quality-of-life features that python makes possible. This makes interacting with your devices even easier!
 
-.. toctree::
-   :hidden:
-   :maxdepth: 1
+Get Started!
+------------
+Our Python API currently consists of 2 separate packages. Head over to either of their quickstart-pages to get going with only a few lines of code.
 
-   quickstart
-
-.. toctree::
-   :titlesonly:
-   :hidden:
-   :maxdepth: 2
-
-   examples
+- :ref:`disruptive <client_quickstart>`
+- :ref:`dtintegrations <integrations_quickstart>`
 
 .. toctree::
    :titlesonly:
    :hidden:
-   :maxdepth: 2
 
-   authentication
+   client
 
 .. toctree::
    :titlesonly:
    :hidden:
-   :maxdepth: 4
 
-   resources
+   integrations
 
 .. toctree::
    :hidden:
@@ -46,13 +38,3 @@ This is the Disruptive Technologies Python 3 API. It is an extension of our `RES
    :maxdepth: 1
 
    errors
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-   configuration
-
-Get Started!
-------------
-Head over to the :ref:`Quickstart <quickstart>` page to get started with only a few lines of code.

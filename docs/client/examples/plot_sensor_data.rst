@@ -44,7 +44,7 @@ The following snippet implements the example. Remember to set the environment va
    plt.ylabel('Temperature [C]')
    plt.show()
 
-.. image:: /examples/plot-sensor-data.png
+.. image:: plot-sensor-data.png
 
 Explanation
 -----------

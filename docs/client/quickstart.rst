@@ -1,4 +1,4 @@
-.. _quickstart:
+.. _client_quickstart:
 
 Quickstart
 ==========
@@ -56,4 +56,4 @@ Assuming you have authenticated correctly, most functionality is accessed throug
        # Print the data in new events as they arrive.
        print(event.data)
 
-See the :ref:`Examples` section for more in-depth usage.
+See the :ref:`client_examples` section for more in-depth usage.

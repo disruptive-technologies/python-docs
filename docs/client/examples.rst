@@ -1,4 +1,4 @@
-.. _Examples:
+.. _client_examples:
 
 ********
 Examples
