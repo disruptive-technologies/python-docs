@@ -70,8 +70,16 @@ div.body li::marker {
     color: #3e4349aa;
 }
 
-.toctree-l2, .toctree-l3 {
+.toctree-l1 {
+    padding-bottom: 12px;
+}
+
+.toctree-l2 {
     padding-top: 6px;
+}
+
+.toctree-l3 {
+    padding-top: 3px;
 }
 
 div.sphinxsidebar #searchbox {

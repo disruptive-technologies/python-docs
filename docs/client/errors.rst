@@ -1,3 +1,5 @@
+.. _client_errors:
+
 Errors
 ======
 The Python API is designed to raise exceptions for any problems that occur during usage, where the exceptions are grouped by four major categories depending on the cause.

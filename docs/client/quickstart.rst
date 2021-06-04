@@ -2,7 +2,7 @@
 
 Quickstart
 ==========
-Our Python 3 API aims to be simple in use without compromising on functionality. Therefore, once authenticated, most tasks can be performed with only a single line of code.
+Our Python 3 API aims to be simple in use without compromising on functionality. Therefore, once authenticated, most functionality can be accessed with only a single line of code.
 
 Installation
 ------------
@@ -25,11 +25,11 @@ Using :ref:`Service Account credentials<service_account_auth>`, setting :code:`d
    # Using Service Account credentials, authenticate the entire package.
    dt.default_auth = dt.Auth.service_account('<KEY_ID>', '<SECRET>', '<EMAIL>')
 
-You can read about the various ways of authenticating in the :ref:`Authentication` section.
+You can read about the various ways of authenticating in the :ref:`Authentication <client_authentication>` section.
 
 Usage
 -----
-Assuming you have authenticated correctly, most functionality is accessed through methods grouped under various :ref:`Resources <resource_methods>` on the form :code:`disruptive.<Resource>.<method>()`.
+Assuming you have authenticated correctly, most functionality is accessed through methods grouped under various :ref:`Resources <client_resources>` on the form :code:`disruptive.<Resource>.<method>()`.
 
 .. code-block:: python
 

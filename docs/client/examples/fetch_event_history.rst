@@ -81,7 +81,7 @@ The start time is provided to the event history method, which executes the reque
        start_time=seven_days_ago,
    )
 
-The response is a list of :ref:`Events <event>` which we can iterate through in a loop. Within each event, various information is then extracted and printed.
+The response is a list of :ref:`Events <client_events>` which we can iterate through in a loop. Within each event, various information is then extracted and printed.
 
 .. code-block:: python
 

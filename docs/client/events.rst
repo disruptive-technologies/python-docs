@@ -1,8 +1,8 @@
-.. _event:
+.. _client_events:
 
 Events
 ======
-When interacting the :ref:`EventHistory <eventhistory>` or :ref:`Stream <stream>` resources, fetched events are represented by an instance of the :ref:`Event <event>` class.
+When interacting the :ref:`EventHistory <eventhistory>` or :ref:`Stream <stream>` resources, fetched events are represented by an instance of the :ref:`Event <client_events>` class.
 
 .. autoclass:: disruptive.events.Event
 
@@ -44,7 +44,7 @@ This can be useful when using resource methods where one can filter on event typ
 
 Event Data
 ----------
-The following classes each represent one type-specific event data that can be encountered. Instances are found in the :code:`data` attribute of an :ref:`Event <event>` or the :code:`reported` attribute of a :ref:`Device <device>`.
+The following classes each represent one type-specific event data that can be encountered. Instances are found in the :code:`data` attribute of an :ref:`Event <client_events>` or the :code:`reported` attribute of a :ref:`Device <device>`.
 
 - :ref:`Touch <touch_event>`
 - :ref:`Temperature <temperature_event>`

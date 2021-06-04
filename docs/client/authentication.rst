@@ -1,4 +1,4 @@
-.. _Authentication:
+.. _client_authentication:
 
 Authentication
 ==============
@@ -30,7 +30,7 @@ By setting :code:`disruptive.default_auth`, all functionality in the package is 
 Per-Requests
 ------------
 
-Each :ref:`Resource Method <resource_methods>` can also be authenticated individually by directly providing an instance of the authentication method of coice.
+Each :ref:`Resource Method <client_resources>` can also be authenticated individually by directly providing an instance of the authentication method of coice.
 
 Note that this will ignore the package-wide conifguration variable :code:`disruptive.default_auth`.
 

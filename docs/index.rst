@@ -10,10 +10,12 @@ This is the Disruptive Technologies Python 3 API. It is an extension of our vari
 
 Get Started!
 ------------
-Our Python API currently consists of 2 separate packages. Head over to either of their quickstart-pages to get going with only a few lines of code.
+Our Python API currently consists of 2 separate packages.
 
-- :ref:`disruptive <client_quickstart>`
-- :ref:`dtintegrations <integrations_quickstart>`
+- :ref:`disruptive <client_quickstart>`: A Python wrapper for our REST API.
+- :ref:`dtintegrations <integrations_quickstart>`: Methods for simpler Data Connector integrations.
+
+Head over to either of their quickstart-pages to get going with only a few lines of code.
 
 .. toctree::
    :titlesonly:
@@ -26,15 +28,3 @@ Our Python API currently consists of 2 separate packages. Head over to either of
    :hidden:
 
    integrations
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-   events
-
-.. toctree::
-   :hidden:
-   :maxdepth: 1
-
-   errors

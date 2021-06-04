@@ -1,4 +1,4 @@
-.. _resource_methods:
+.. _client_resources:
 
 Resources
 =========

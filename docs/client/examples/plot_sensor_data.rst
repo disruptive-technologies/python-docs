@@ -65,7 +65,7 @@ Once authenticated, the temperature event history can be fetched using the :code
        start_time=datetime.today()-timedelta(days=7),
    )
 
-The returned `event_history` variable is list containing the fetched :ref:`Events <event>`. Various data can be extracted quickly using simple list comprehension.
+The returned `event_history` variable is list containing the fetched :ref:`Events <client_events>`. Various data can be extracted quickly using simple list comprehension.
 
 .. code-block:: python
 
