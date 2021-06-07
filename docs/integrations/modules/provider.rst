@@ -9,6 +9,7 @@ String Constants
 The :code:`provider` module contains a string constant for each supported provider.
 
 .. autoattribute:: dtintegrations.provider.FLASK
+.. autoattribute:: dtintegrations.provider.DJANGO
 .. autoattribute:: dtintegrations.provider.GCLOUD
 .. autoattribute:: dtintegrations.provider.LAMBDA
 .. autoattribute:: dtintegrations.provider.AZURE
