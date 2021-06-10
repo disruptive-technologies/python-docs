@@ -24,7 +24,7 @@ The following example validates the incoming request at a simple `flask <https:/
 
    from dtintegrations import data_connector, provider
 
-   event = data_connector.http_push.validate(
+   event, labels = data_connector.http_push.validate(
        request,
        provider_name=provider.FLASK,
        secret=os.getenv('<YOUR_SIGNATURE_SECRET>'),
