@@ -9,7 +9,7 @@ Environment Variables
 ---------------------
 If you do not wish to edit the example code, certain environment variables must be set.
 
-All examples authenticate using :ref:`Service Account credentials <service_account_auth>`. Therefore, the following environment variables are expected throughout.
+All examples authenticate using :ref:`Service Account credentials <service_account_auth>`. Therefore, the following environment variables must be set for your shell.
 
 .. code-block:: bash
 
