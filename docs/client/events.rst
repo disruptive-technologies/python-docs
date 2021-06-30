@@ -48,6 +48,7 @@ The following classes each represent one type-specific event data that can be en
 
 - :ref:`Touch <touch_event>`
 - :ref:`Temperature <temperature_event>`
+- :ref:`TemperatureSample <temperature_sample_event>`
 - :ref:`ObjectPresent <objectpresent_event>`
 - :ref:`Humidity <touch_event>`
 - :ref:`ObjectPresentCount <objectpresentcount_event>`
@@ -69,6 +70,12 @@ The following classes each represent one type-specific event data that can be en
 .. autoclass:: disruptive.events.Temperature
 
    .. automethod:: disruptive.events.Temperature.__init__
+
+
+.. _temperature_sample_event:
+.. autoclass:: disruptive.events.TemperatureSample
+
+   .. automethod:: disruptive.events.TemperatureSample.__init__
 
 .. _objectpresent_event:
 .. autoclass:: disruptive.events.ObjectPresent
