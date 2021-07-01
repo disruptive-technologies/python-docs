@@ -25,6 +25,7 @@ List of Examples
 - :ref:`Get Device <get_device_example>`
 - :ref:`Plot Sensor Data <plot_sensor_data_example>`
 - :ref:`Threaded Stream <threaded_stream_example>`
+- :ref:`2.Gen Temperature Sensor <2nd_gen_temperature_sensor_example>`
 
 .. toctree::
    :maxdepth: 1
@@ -34,3 +35,4 @@ List of Examples
    examples/fetch_event_history
    examples/plot_sensor_data
    examples/threaded_stream
+   examples/2nd_gen_temperature_sensor
