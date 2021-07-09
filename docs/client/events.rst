@@ -50,7 +50,7 @@ The following classes each represent one type-specific event data that can be en
 - :ref:`Temperature <temperature_event>`
 - :ref:`TemperatureSample <temperature_sample_event>`
 - :ref:`ObjectPresent <objectpresent_event>`
-- :ref:`Humidity <touch_event>`
+- :ref:`Humidity <humidity_event>`
 - :ref:`ObjectPresentCount <objectpresentcount_event>`
 - :ref:`TouchCount <touchcount_event>`
 - :ref:`WaterPresent <waterpresent_event>`
