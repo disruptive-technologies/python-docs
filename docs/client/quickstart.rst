@@ -22,23 +22,28 @@ Using :ref:`Service Account credentials<service_account_auth>`, setting :code:`d
 
    import disruptive as dt
    
-   # Using Service Account credentials, authenticate the entire package.
    dt.default_auth = dt.Auth.service_account('<KEY_ID>', '<SECRET>', '<EMAIL>')
 
 You can read about the various ways of authenticating in the :ref:`Authentication <client_authentication>` section.
 
 Usage
 -----
-Assuming you have authenticated correctly, most functionality is accessed through methods grouped under various :ref:`Resources <client_resources>` on the form :code:`disruptive.<Resource>.<method>()`.
+Once authenticated, most functionality can be accessed through resource methods on the following format.
+
+.. code-block::
+
+   disruptive.<Resource>.<method>()
+
+A few common uses are showcased in the snippet below.
 
 .. code-block:: python
 
    import disruptive as dt
-
-   # Fetch a specific sensor from a project.
-   sensor = dt.Device.get_device(device_id)
    
-   # Print the sensor information wil list all attributes and values.
+   # Fetch a sensor, specified by its ID.
+   sensor = dt.Device.get_device('<DEVICE_ID>')
+   
+   # Printing the returned object will list all attributes.
    print(sensor)
    
    # Set a new label on the sensor.
@@ -48,12 +53,15 @@ Assuming you have authenticated correctly, most functionality is accessed throug
    history = dt.EventHistory.list_events(
        sensor.device_id,
        sensor.project_id,
-       event_types=['touch', 'temperature']
+       event_types=[
+           dt.events.TOUCH,
+           dt.events.TEMPERATURE,
+       ]
    )
    
-   # Set up a real-time event stream of all device in project.
+   # Initiate an event stream for all devices in the sensor's project.
    for event in dt.Stream.event_stream(sensor.project_id):
-       # Print the data in new events as they arrive.
+       # Print new events data as they arrive.
        print(event.data)
 
 See the :ref:`client_examples` section for more in-depth usage.
