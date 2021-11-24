@@ -7,9 +7,7 @@ The following examples are meant to help you get started using our Python API.
 
 Environment Variables
 ---------------------
-If you do not wish to edit the example code, certain environment variables must be set.
-
-All examples authenticate using :ref:`Service Account credentials <service_account_auth>`. Therefore, the following environment variables must be set for your shell.
+All examples authenticate using :ref:`Service Account credentials <service_account_auth>`. These can be provided to the package by either editing the example code directly, or setting the appropriate environment variables.
 
 .. code-block:: bash
 
@@ -17,7 +15,7 @@ All examples authenticate using :ref:`Service Account credentials <service_accou
    export DT_SERVICE_ACCOUNT_SECRET="<YOUR_CREDENTIAL_KEY_ID>"
    export DT_SERVICE_ACCOUNT_EMAIL="<YOUR_CREDENTIAL_KEY_ID>"
 
-Depending on the example, additional environment variables like :code:`DEVICE_ID` and :code:`PROJECT_ID` may be required. These are listed early in the code for visibility.
+Depending on the example, additional variables like :code:`DEVICE_ID` and :code:`PROJECT_ID` may be required. These are listed early in the code for visibility.
 
 List of Examples
 ----------------
