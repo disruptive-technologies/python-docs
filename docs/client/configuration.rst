@@ -16,7 +16,7 @@ The following snippet shows the various variables that can be configured and the
    import disruptive as dt
 
    # Set to either 'debug', 'info', 'warning', 'error', or 'critical' to enable logging.
-   dt.log = None
+   dt.log_level = 'info'
 
    # Number of seconds to wait for a response before giving up.
    dt.request_timeout = 3
