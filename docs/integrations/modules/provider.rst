@@ -20,7 +20,7 @@ This can be a useful alternative to writing the strings directly.
 
    from dtintegrations import data_connector, provider
 
-   event = data_connector.http_push.validate(
+   payload = data_connector.HttpPush.from_provider(
        request=request,
        provider=provider.FLASK,
        secret='test-secret',

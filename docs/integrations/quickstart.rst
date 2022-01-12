@@ -24,10 +24,10 @@ The following example validates the incoming request at a simple `flask <https:/
 
    from dtintegrations import data_connector, provider
 
-   event, labels = data_connector.http_push.validate(
-       request,
+   payload = data_connector.HttpPush.from_provider(
+       request=request,
        provider_name=provider.FLASK,
-       secret=os.getenv('<YOUR_SIGNATURE_SECRET>'),
+       secret='<YOUR_SIGNATURE_SECRET>',
    )
 
 See the :ref:`Examples <integrations_examples>` section for more in-depth integrations.

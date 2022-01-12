@@ -4,13 +4,16 @@ http_push
 =========
 This submodule contains methods related to the HTTP Push type Data Connector.
 
-- :ref:`decode_request() <http_push_decode_request>`
-- :ref:`decode() <http_push_decode>`
+- :ref:`from_provider() <HttpPush_from_provider>`
 
 Methods
 -------
-.. _http_push_decode_request:
-.. autofunction:: dtintegrations.data_connector.http_push.decode_request
+.. _HttpPush_from_provider:
+.. autofunction:: dtintegrations.data_connector.HttpPush.from_provider
 
-.. _http_push_decode:
-.. autofunction:: dtintegrations.data_connector.http_push.decode
+Class
+-----
+.. autoclass:: dtintegrations.data_connector.http_push.HttpPush
+
+.. _HttpPush_get_device_metadata:
+.. autofunction:: dtintegrations.data_connector.http_push.HttpPush.get_device_metadata

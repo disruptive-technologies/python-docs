@@ -14,14 +14,14 @@ The following example shows how to set up a simple Flask server for which we rec
    @app.route('/', methods=['POST'])
    def dataconnector_endpoint():
        # Use the provider-specific validation function.
-       event, labels = data_connector.http_push.decode_request(
-           request,
+       payload = data_connector.http_push.decode_request(
+           request=request,
            provider=provider.FLASK,
            secret=os.getenv('DT_SIGNATURE_SECRET'),
        )
    
-       # Print the event data.
-       print(event)
+       # Print the payload data.
+       print(payload)
    
        # If all is well, return 200 response.
        return 'Success'
