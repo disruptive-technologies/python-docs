@@ -1,7 +1,7 @@
 .. _flask_server_example:
 
-Flask Event Decode
-==================
+Flask Server
+============
 The following example shows how to set up a simple Flask server for which we receive HTTP Post requests forwarded by a Data Connector. Contained within each request is event data from your sensors, and the request is validated and decoded using functions provided by this package.
 
 .. code-block:: python
@@ -9,6 +9,7 @@ The following example shows how to set up a simple Flask server for which we rec
    import os
    from flask import Flask, request  # pip install flask
    from dtintegrations import data_connector, provider
+
    app = Flask(__name__)
    
    @app.route('/', methods=['POST'])
