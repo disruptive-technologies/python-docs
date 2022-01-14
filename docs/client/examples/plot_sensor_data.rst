@@ -6,30 +6,22 @@ In this example, 7 days of historic temperature events are fetched and plotted f
 
 Full Example
 ------------
-The following snippet implements the example. Remember to set the environment variables.
+The following snippet implements the example. Remember to update user-defined variables.
 
 .. code-block:: python
 
-   import os
    from datetime import datetime, timedelta
-   
    import matplotlib.pyplot as plt
    import disruptive as dt
    
-   # Fetch credentials and device info from environment.
-   key_id = os.getenv('DT_SERVICE_ACCOUNT_KEY_ID', '')
-   secret = os.getenv('DT_SERVICE_ACCOUNT_SECRET', '')
-   email = os.getenv('DT_SERVICE_ACCOUNT_EMAIL', '')
-   device_id = os.getenv('DT_DEVICE_ID', '')
-   project_id = os.getenv('DT_PROJECT_ID', '')
-   
-   # Authenticate the package using Service Account credentials.
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+   # User-defined variables.
+   DEVICE_ID = '<YOUR_DEVICE_ID>'
+   PROJECT_ID = '<YOUR_PROJECT_ID>'
    
    # Fetch temperature events for the last 7 days.
    event_history = dt.EventHistory.list_events(
-       device_id=device_id,
-       project_id=project_id,
+       device_id=DEVICE_ID,
+       project_id=PROJECT_ID,
        event_types=[dt.events.TEMPERATURE],
        start_time=datetime.today()-timedelta(days=7),
    )
@@ -46,21 +38,17 @@ The following snippet implements the example. Remember to set the environment va
 
 .. image:: plot-sensor-data.png
 
-Explanation
------------
-Using `Service Account <https://developer.disruptive-technologies.com/docs/service-accounts/introduction-to-service-accounts>`_ credentials, the entire package can be authenticated at once by setting the :code:`dt.default_auth` variable with an Auth :ref:`authentication method <authmethods>`.
-
-.. code-block:: python
-
-   dt.default_auth = dt.Auth.serviceaccount(key_id, secret, email)
+Step-by-Step Explanation
+------------------------
+The package is authenticated as described in the :ref:`Authentication <client_authentication>` using environment variables.
 
 Once authenticated, the temperature event history can be fetched using the :code:`disruptive.EventHistory.list_events()` resource method. Default timerange is the last 24 hours, but here we provide a `start_time` 7 days ago.
 
 .. code-block:: python
 
    history = dt.EventHistory.list_events(
-       device_id=device_id,
-       project_id=project_id,
+       device_id=DEVICE_ID,
+       project_id=PROJECT_ID,
        event_types=[dt.events.TEMPERATURE],
        start_time=datetime.today()-timedelta(days=7),
    )

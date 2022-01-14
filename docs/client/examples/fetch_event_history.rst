@@ -6,32 +6,24 @@ In this example, a device's humidity events is fetched and printed for the past 
 
 Full Example
 ------------
-The following snippet implements the example. Remember to set the environment variables.
+The following snippet implements the example. Remember to update user-defined variables.
 
 .. code-block:: python
 
-   import os
    from datetime import datetime, timedelta
-   
    import disruptive as dt
    
-   # Fetch credentials and device info from environment.
-   key_id = os.getenv('DT_SERVICE_ACCOUNT_KEY_ID', '')
-   secret = os.getenv('DT_SERVICE_ACCOUNT_SECRET', '')
-   email = os.getenv('DT_SERVICE_ACCOUNT_EMAIL', '')
-   device_id = os.getenv('DT_DEVICE_ID', '')
-   project_id = os.getenv('DT_PROJECT_ID', '')
-   
-   # Authenticate the package using Service Account credentials.
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+   # User-defined variables.
+   DEVICE_ID = '<YOUR_DEVICE_ID>'
+   PROJECT_ID = '<YOUR_PROJECT_ID>'
    
    # Define the start-time from when events are fetched.
    seven_days_ago = datetime.now() - timedelta(7)
    
    # Fetch humidity events from the past 7 days.
    events = dt.EventHistory.list_events(
-       device_id=device_id,
-       project_id=project_id,
+       device_id=DEVICE_ID,
+       project_id=PROJECT_ID,
        event_types=[dt.events.HUMIDITY],
        start_time=seven_days_ago,
    )
@@ -54,13 +46,9 @@ This will produce an output similar to the following snippet.
    24% humidity from event c2f6dvvkm0nusv59v0vg at 2021-05-14 12:03:11.128840+00:00.
    24% humidity from event c2dre6vkm0nusv59od3g at 2021-05-12 11:08:11.833330+00:00.
 
-Explanation
------------
-Using `Service Account <https://developer.disruptive-technologies.com/docs/service-accounts/introduction-to-service-accounts>`_ credentials, the entire package can be authenticated at once by setting the :code:`dt.default_auth` variable with an Auth :ref:`authentication method <authmethods>`.
-
-.. code-block:: python
-
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+Step-by-Step Explanation
+------------------------
+The package is authenticated as described in the :ref:`Authentication <client_authentication>` using environment variables.
 
 Once authenticated, a the event history of a device can be fetched using the :code:`list_events()` resource method, but first we use the standard :code:`datetime` library to define our start time.
 
@@ -75,8 +63,8 @@ The start time is provided to the event history method, which executes the reque
    
    # Fetch humidity events from the past 7 days.
    events = dt.EventHistory.list_events(
-       device_id=device_id,
-       project_id=project_id,
+       device_id=DEVICE_ID,
+       project_id=PROJECT_ID,
        event_types=[dt.events.HUMIDITY],
        start_time=seven_days_ago,
    )
