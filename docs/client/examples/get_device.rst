@@ -6,25 +6,17 @@ In this example, a single device is fetched and printed to console.
 
 Full Example
 ------------
-The following snippet implements the example. Remember to set the environment variables.
+The following snippet implements the example. Remember to update user-defined variables.
 
 .. code-block:: python
 
-   import os
-   
    import disruptive as dt
-   
-   # Fetch credentials and device info from environment.
-   key_id = os.getenv('DT_SERVICE_ACCOUNT_KEY_ID', '')
-   secret = os.getenv('DT_SERVICE_ACCOUNT_SECRET', '')
-   email = os.getenv('DT_SERVICE_ACCOUNT_EMAIL', '')
-   device_id = os.getenv('DT_DEVICE_ID', '')
-   
-   # Authenticate the package using Service Account credentials.
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+
+   # User-defined variables.
+   DEVICE_ID = '<YOUR_DEVICE_ID>'
    
    # Get the device of interest.
-   device = dt.Device.get_device(device_id)
+   device = dt.Device.get_device(device_id=DEVICE_ID)
    
    # Print the device information to console.
    print(device)
@@ -43,21 +35,17 @@ This will generate an output similar to the snippet below.
        ...
    )
 
-Explanation
------------
-Using `Service Account <https://developer.disruptive-technologies.com/docs/service-accounts/introduction-to-service-accounts>`_ credentials, the entire package can be authenticated at once by setting the :code:`dt.default_auth` variable with an Auth :ref:`authentication method <authmethods>`.
+Step-by-Step Explanation
+------------------------
+The package is authenticated as described in the :ref:`Authentication <client_authentication>` using environment variables.
+
+Once authenticated, a single device is fetched using the :code:`get_device()` resource method.
 
 .. code-block:: python
 
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+   device = dt.Device.get_device(device_id=DEVICE_ID)
 
-Once authenticated, a device can be fetched using the :code:`get_device()` resource method.
-
-.. code-block:: python
-
-   device = dt.Device.get_device(device_id)
-
-The returned `device` variable is an instance of the `Device` class. It contains many different attributes describing the device itself. By printing the variable, all attributes are printed at once.
+The returned variable is an instance of the :ref:`Device <device>` class, representing the various attributes that describe the device. Printing the object will give you an overview of the attributes.
 
 .. code-block:: python
 

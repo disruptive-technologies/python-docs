@@ -2,42 +2,45 @@
 
 Authentication
 ==============
-Most of the functionality provided with this Python API requires authenticating with the REST API. Fortunately, provided you are in possession of valid credentials with sufficient `access rights <https://developer.disruptive-technologies.com/docs/service-accounts/managing-access-rights>`_, this can be achieved in a single line of code.
+Most of the functionality provided by this package requires authentication using `Service Account <https://developer.disruptive-technologies.com/docs/service-accounts/introduction-to-service-accounts>`_ credentials configured with sufficient `access rights <https://developer.disruptive-technologies.com/docs/service-accounts/managing-access-rights>`_ for your task.
 
-Methods
--------
-The following authentication methods are currently available.
+Credentials can be provided either by setting the following environment variables
 
-.. _authmethods:
+.. code-block:: bash
 
-- :ref:`Service Account Credentials <service_account_auth>`
+   export DT_SERVICE_ACCOUNT_KEY_ID="<SERVICE_ACCOUNT_KEY_ID>"
+   export DT_SERVICE_ACCOUNT_SECRET="<SERVICE_ACCOUNT_SECRET>"
+   export DT_SERVICE_ACCOUNT_EMAIL="<SERVICE_ACCOUNT_EMAIL>"
 
-Package-Wide
-------------
-
-By setting :code:`disruptive.default_auth`, all functionality in the package is authenticated at once.
+or by providing the credentials programmatically.
 
 .. code-block:: python
 
    import disruptive as dt
    
-   # Authenticate all resource methods in the package at once.
-   dt.default_auth = dt.Auth.<METHOD>('credentials...')
+   dt.default_auth = dt.Auth.service_account(
+       key_id="<SERVICE_ACCOUNT_KEY_ID>",
+       secret="<SERVICE_ACCOUNT_SECRET>",
+       email="<SERVICE_ACCOUNT_EMAIL>",
+   )
 
-   # Call any Resource Method.
-   device = dt.Device.get_device(device_id)
+Either method authenticates all functionality provided by the package.
 
-Per-Requests
-------------
+Authenticating Individual Requests
+----------------------------------
 
-Each :ref:`Resource Method <client_resources>` can also be authenticated individually by directly providing an instance of the authentication method of coice.
-
-Note that this will ignore the package-wide conifguration variable :code:`disruptive.default_auth`.
+If you wish to individually authenticate each request, or use different Service Account credentials for different calls, each :ref:`Resource Method <client_resources>` can be provided with a :ref:`ServiceAccountAuth <service_account_auth>` object directly.
 
 .. code-block:: python
 
-   # Provide the API Method with an authentication object directly.
-   device = dt.Device.get_device(device_id, auth=dt.Auth.<METHOD>('credentials...'))
+   sa_auth_1 = dt.Auth.service_account('key1', 'secret1', 'email1')
+   sa_auth_2 = dt.Auth.service_account('key2', 'secret2', 'email2')
+
+   # Authenticat each resource method using different credentials.
+   device = dt.Device.get_device(device_id, auth=sa_auth_1)
+   projects = dt.Project.list_projects(organization_id, auth=sa_auth_2)
+
+Note that this will override other authentication methods that may be active.
 
 .. toctree::
    :maxdepth: 1

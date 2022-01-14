@@ -16,15 +16,19 @@ Support is available for Python 3.7+.
 
 Authentication
 --------------
-Using :ref:`Service Account credentials<service_account_auth>`, setting :code:`disruptive.default_auth` authenticates the package:
+Authenticate by providing `Service Account <https://developer.disruptive-technologies.com/docs/service-accounts/introduction-to-service-accounts>`_ credentials to the package.
 
 .. code-block:: python
 
    import disruptive as dt
    
-   dt.default_auth = dt.Auth.service_account('<KEY_ID>', '<SECRET>', '<EMAIL>')
+   dt.default_auth = dt.Auth.service_account(
+       key_id="<SERVICE_ACCOUNT_KEY_ID>",
+       secret="<SERVICE_ACCOUNT_SECRET>",
+       email="<SERVICE_ACCOUNT_EMAIL>",
+   )
 
-You can read about the various ways of authenticating in the :ref:`Authentication <client_authentication>` section.
+See the :ref:`Authentication <client_authentication>` section for other methods of authentication.
 
 Usage
 -----

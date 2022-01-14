@@ -6,24 +6,17 @@ In this example, the :code:`disruptive.Stream.event_stream()` resource method an
 
 Full Example
 ------------
-The following snippet implements the example. Remember to set the environment variables.
+The following snippet implements the example. Remember to update user-defined variables.
 
 .. code-block:: python 
 
-   import os
    import time
    import threading
    
    import disruptive as dt
    
-   # Fetch credentials and project info from environment.
-   key_id = os.getenv('DT_SERVICE_ACCOUNT_KEY_ID', '')
-   secret = os.getenv('DT_SERVICE_ACCOUNT_SECRET', '')
-   email = os.getenv('DT_SERVICE_ACCOUNT_EMAIL', '')
-   project_id = os.getenv('DT_PROJECT_ID', '')
-   
-   # Authenticate the package using Service Account credentials.
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+   # User-defined variables.
+   PROJECT_ID = '<YOUR_PROJECT_ID>'
    
    
    # Function which will be the target for our thread.
@@ -48,7 +41,7 @@ The following snippet implements the example. Remember to set the environment va
    # Start the stream worker in a separate thread.
    t = threading.Thread(
        target=stream_worker,
-       args=(project_id,),
+       args=(PROJECT_ID,),
    )
    t.start()
    
@@ -70,15 +63,9 @@ The following snippet implements the example. Remember to set the environment va
        # Patiently wait for 5 seconds.
        time.sleep(5)
 
-Explanation
------------
-
-Using `Service Account <https://developer.disruptive-technologies.com/docs/service-accounts/introduction-to-service-accounts>`_ credentials, the entire package can be authenticated at once by setting the :code:`dt.default_auth` variable with an Auth :ref:`authentication method <authmethods>`.
-
-.. code-block:: python
-
-   # Authenticate the package using Service Account credentials.
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+Step-by-Step Explanation
+------------------------
+The package is authenticated as described in the :ref:`Authentication <client_authentication>` using environment variables.
 
 When using the `threading` package, the target code to be ran in the newly spawned thread must be wrapped in a function, here called :code:`stream_worker`. It's job is to start the stream generator, then append new events to buffer as they arrive.
 
@@ -106,7 +93,7 @@ Before the thread is spawned using the target :code:`stream_worker`, a locking o
    # Start the stream worker in a separate thread.
    t = threading.Thread(
        target=stream_worker,
-       args=(project_id,),
+       args=(PROJECT_ID,),
    )
    t.start()
 

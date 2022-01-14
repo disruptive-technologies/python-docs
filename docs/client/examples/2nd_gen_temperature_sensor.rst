@@ -6,22 +6,17 @@ In this example we will look at how to publish an emulated temperature event for
 
 Full Example
 ------------
-The following snippet implements the example. Remember to set the environment variables.
+The following snippet implements the example. Remember to update user-defined variables.
 
 .. code-block:: python
 
-   import os
+   import matplotlib.pyplot as plt
    from datetime import datetime, timedelta
    import disruptive as dt
    
    # Fetch credentials and device info from environment.
-   key_id = os.getenv('DT_SERVICE_ACCOUNT_KEY_ID')
-   secret = os.getenv('DT_SERVICE_ACCOUNT_SECRET')
-   email = os.getenv('DT_SERVICE_ACCOUNT_EMAIL')
-   device_id = os.getenv('DT_DEVICE_ID')
-   
-   # Authenticate the package using Service Account credentials.
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+   DEVICE_ID = '<YOUR_DEVICE_ID>'
+   PROJECT_ID = '<YOUR_PROJECT_ID>'
    
    # Create initial values of temperature and time.
    timestamp_now = datetime.utcnow()
@@ -38,19 +33,19 @@ The following snippet implements the example. Remember to set the environment va
    
    # Publish an emulated temperature event with inter-heartbeat samples.
    dt.Emulator.publish_event(
-       device_id=os.getenv('DT_DEVICE_ID'),
-       project_id=os.getenv('DT_PROJECT_ID'),
+       device_id=DEVICE_ID,
+       project_id=PROJECT_ID,
        data=dt.events.Temperature(
            celsius=temperature_now,
            timestamp=timestamp_now,
            samples=samples,
        )
    )
-
+   
    # Fetch a list of all temperature event within the last 7 days.
    events = dt.EventHistory.list_events(
-       device_id=os.getenv('DT_DEVICE_ID'),
-       project_id=os.getenv('DT_PROJECT_ID'),
+       device_id=DEVICE_ID,
+       project_id=PROJECT_ID,
        event_types=[dt.events.TEMPERATURE],
        start_time=datetime.utcnow()-timedelta(days=7),
    )
@@ -66,19 +61,14 @@ The following snippet implements the example. Remember to set the environment va
        values += [sample.celsius for sample in event.data.samples]
    
    # Plot the output. This requires matplotlib to be installed.
-   # import matplotlib.pyplot as plt
-   # plt.plot(timestamps, values, '.-')
-   # plt.show()
+   plt.plot(timestamps, values, '.-')
+   plt.show()
 
 .. image:: t2-temperature.png
 
-Explanation
------------
-Using `Service Account <https://developer.disruptive-technologies.com/docs/service-accounts/introduction-to-service-accounts>`_ credentials, the entire package can be authenticated at once by setting the :code:`dt.default_auth` variable with an Auth :ref:`authentication method <authmethods>`.
-
-.. code-block:: python
-
-   dt.default_auth = dt.Auth.service_account(key_id, secret, email)
+Step-by-Step Explanation
+------------------------
+The package is authenticated as described in the :ref:`Authentication <client_authentication>` using environment variables.
 
 Once authenticated, a list of 5 :ref:`TemperatureSample <temperature_sample_event>` events are generated, where the timestamps are evenly spaced assuming a 15 minute heartbeat. For simplicity, the Celsius values are simply a linear increase, but can of course be any value.
 
@@ -100,8 +90,8 @@ Once the list is ready, publish the event to our emulated sensor. To represent h
 .. code-block:: python
 
    dt.Emulator.publish_event(
-       device_id=os.getenv('DT_DEVICE_ID'),
-       project_id=os.getenv('DT_PROJECT_ID'),
+       device_id=DEVICE_ID,
+       project_id=PROJECT_ID,
        data=dt.events.Temperature(
            celsius=temperature_now,
            timestamp=timestamp_now,
@@ -114,8 +104,8 @@ The event history for the previous 7 days are also fetched. We specify that only
 .. code-block:: python
 
    events = dt.EventHistory.list_events(
-       device_id=os.getenv('DT_DEVICE_ID'),
-       project_id=os.getenv('DT_PROJECT_ID'),
+       device_id=DEVICE_ID,
+       project_id=PROJECT_ID,
        event_types=[dt.events.TEMPERATURE],
        start_time=datetime.utcnow()-timedelta(days=7),
    )
