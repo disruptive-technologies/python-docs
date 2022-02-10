@@ -8,14 +8,16 @@ The following example shows how to set up a simple Flask server for which we rec
 
    import os
    from flask import Flask, request  # pip install flask
+   
    from dtintegrations import data_connector, provider
-
+   
    app = Flask(__name__)
    
+   
    @app.route('/', methods=['POST'])
-   def dataconnector_endpoint():
+   def print_request_contents():
        # Use the provider-specific validation function.
-       payload = data_connector.http_push.decode_request(
+       payload = data_connector.HttpPush.from_provider(
            request=request,
            provider=provider.FLASK,
            secret=os.getenv('DT_SIGNATURE_SECRET'),
