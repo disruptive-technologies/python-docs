@@ -1,4 +1,4 @@
 disruptive
 dtintegrations
-sphinx==3.5.3
-sphinx-autodoc-typehints==1.11.1
+sphinx==4.5.0
+sphinx-autodoc-typehints==1.17.0
