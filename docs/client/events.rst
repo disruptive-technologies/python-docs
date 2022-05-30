@@ -25,6 +25,10 @@ A constant for each event type is available in the `events` module.
 .. autoattribute:: disruptive.events.CONNECTION_STATUS
 .. autoattribute:: disruptive.events.ETHERNET_STATUS
 .. autoattribute:: disruptive.events.CELLULAR_STATUS
+.. autoattribute:: disruptive.events.CO2
+.. autoattribute:: disruptive.events.PRESSURE
+.. autoattribute:: disruptive.events.MOTION
+.. autoattribute:: disruptive.events.DESK_OCCUPANCY
 
 This can be useful when using resource methods where one can filter on event types.
 
@@ -60,6 +64,10 @@ The following classes each represent one type-specific event data that can be en
 - :ref:`ConnectionStatus <connectionstatus_event>`
 - :ref:`EthernetStatus <ethernetstatus_event>`
 - :ref:`CellularStatus <cellularstatus_event>`
+- :ref:`Co2 <co2_event>`
+- :ref:`Pressure <pressure_event>`
+- :ref:`Motion <motion_event>`
+- :ref:`DeskOccupancy <desk_occupancy_event>`
 
 .. _touch_event:
 .. autoclass:: disruptive.events.Touch
@@ -129,4 +137,24 @@ The following classes each represent one type-specific event data that can be en
 .. autoclass:: disruptive.events.CellularStatus
 
    .. automethod:: disruptive.events.CellularStatus.__init__
+
+.. _co2_event:
+.. autoclass:: disruptive.events.Co2
+
+   .. automethod:: disruptive.events.Co2.__init__
+
+.. _pressure_event:
+.. autoclass:: disruptive.events.Pressure
+
+   .. automethod:: disruptive.events.Pressure.__init__
+
+.. _motion_event:
+.. autoclass:: disruptive.events.Motion
+
+   .. automethod:: disruptive.events.Motion.__init__
+
+.. _desk_occupancy_event:
+.. autoclass:: disruptive.events.DeskOccupancy
+
+   .. automethod:: disruptive.events.DeskOccupancy.__init__
 
