@@ -16,3 +16,4 @@ Resources
    resources/eventhistory
    resources/stream
    resources/emulator
+   resources/claim
