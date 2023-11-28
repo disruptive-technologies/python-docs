@@ -29,6 +29,8 @@ A constant for each event type is available in the `events` module.
 .. autoattribute:: disruptive.events.PRESSURE
 .. autoattribute:: disruptive.events.MOTION
 .. autoattribute:: disruptive.events.DESK_OCCUPANCY
+.. autoattribute:: disruptive.events.CONTACT
+.. autoattribute:: disruptive.events.PROBE_WIRE_STATUS
 
 This can be useful when using resource methods where one can filter on event types.
 
@@ -68,6 +70,8 @@ The following classes each represent one type-specific event data that can be en
 - :ref:`Pressure <pressure_event>`
 - :ref:`Motion <motion_event>`
 - :ref:`DeskOccupancy <desk_occupancy_event>`
+- :ref:`Contact <contact_event>`
+- :ref:`ProbeWireStatus <probe_wire_status_event>`
 
 .. _touch_event:
 .. autoclass:: disruptive.events.Touch
@@ -158,3 +162,12 @@ The following classes each represent one type-specific event data that can be en
 
    .. automethod:: disruptive.events.DeskOccupancy.__init__
 
+.. _contact_event:
+.. autoclass:: disruptive.events.Contact
+
+   .. automethod:: disruptive.events.Contact.__init__
+
+.. _probe_wire_status_event:
+.. autoclass:: disruptive.events.ProbeWireStatus
+
+   .. automethod:: disruptive.events.ProbeWireStatus.__init__

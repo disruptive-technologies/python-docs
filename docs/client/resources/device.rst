@@ -56,6 +56,7 @@ The Device class contains a string constant for each available device type.
 .. autoattribute:: disruptive.Device.CLOUD_CONNECTOR
 .. autoattribute:: disruptive.Device.CO2
 .. autoattribute:: disruptive.Device.DESK_OCCUPANCY
+.. autoattribute:: disruptive.Device.CONTACT
 .. autoattribute:: disruptive.Device.DEVICE_TYPES
 
 This can be a useful alternative to writing the strings directly.
