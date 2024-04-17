@@ -12,7 +12,7 @@ The package can be installed through pip:
 
    pip install --upgrade dtintegrations
 
-Support is available for Python 3.7+.
+Support is available for Python 3.8+.
 
 Usage
 -----
