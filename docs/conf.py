@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'disruptive'
-copyright = '2023, Disruptive Technologies Research AS'
+copyright = '2024, Disruptive Technologies Research AS'
 author = 'Disruptive Technologies Research AS'
 
 # The full version, including alpha/beta/rc tags
